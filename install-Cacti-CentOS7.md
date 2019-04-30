@@ -106,12 +106,23 @@ $database_username = "cacti";
 $database_password = "your-password-here";
 $database_port = "3306";
 $database_ssl = false;
+```
+Configuring Firewall for Cacti
+---
+```
+# On RHEL/CentOS 6.x/5.x
+[root@tecmint ~]# iptables -A INPUT -p udp -m state --state NEW --dport 80 -j ACCEPT
+[root@tecmint ~]# iptables -A INPUT -p tcp -m state --state NEW --dport 80 -j ACCEPT
+[root@tecmint ~]# service iptables save
 
-# Configuring Firewall for Cacti
-
-
-
-
+# On RHEL/CentOS 7.x
+[root@tecmint ~]# firewall-cmd --permanent --zone=public --add-service=http
+[root@tecmint ~]# firewall-cmd --reload
+```
+Configuring Apache Server for Cacti Installation
+---
+```
 
 
 ```
+
