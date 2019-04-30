@@ -68,7 +68,6 @@ wget https://www.cacti.net/downloads/幹，版本自己選好嗎
 
 # tar and mv folder to web folder
 tar cacti
-
 mv cacti /var/www/html/cacti
 cd /var/www/html
 
@@ -78,13 +77,13 @@ chown root:apache /var/lib/php/sessions
 ```
 Configuring MySQL Server for cacti installation
 ```
-# set new password for MySQL, This is for new MySQL Installation only.
-mysqladmin -u root password YOUR-PASSWORD-HERE
+# Initial MariaDB (Press Y for all)
+mysql_secure_installation
 
 # Create Cacti Database from MySQL
 mysql -u root -p
 create database cacti;
-GRANT ALL ON cacti.* TO cacti@localhost IDENTIFIED BY 'tecmint';
+GRANT ALL ON cacti.* TO cacti@localhost IDENTIFIED BY 'cactiuser';
 FLUSH privileges;
 quit;
 
