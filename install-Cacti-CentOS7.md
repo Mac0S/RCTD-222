@@ -53,14 +53,14 @@ Configure System Start-up Links
 [root@tecmint ~]# systemctl enable mariadb.service
 [root@tecmint ~]# systemctl enable snmpd.service
 ```
-Install Cacti 
+Install Cacti
 ---
-Install Cacti By Auto 
+Install Cacti By Auto
 ```
 # Best Choise for lazy.
 yum install cacti
 ```
-Install Cacti By Manual 
+Install Cacti By Manual
 ```
 # Best Choise for 假掰.
 wget https://www.cacti.net/downloads/幹，版本自己選好嗎
@@ -88,7 +88,7 @@ FLUSH privileges;
 quit;
 
 # find cacti.sql location (1 for auto install, 2 for manual isntall)
-rpm -ql cacti | grep cacti.sql 
+rpm -ql cacti | grep cacti.sql
 or
 /var/www/html/cacti/cacti.sql
 
@@ -121,7 +121,6 @@ Configuring Firewall for Cacti
 Configuring Apache Server for Cacti Installation
 ---
 ```
-
+test
 
 ```
-
